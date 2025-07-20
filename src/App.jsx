@@ -16,6 +16,7 @@ function App() {
 
   const inputChange = (e) => {
     const input = e.target.value;
+    //test
     setSearch(input);
   };
   const serchData = data.filter(

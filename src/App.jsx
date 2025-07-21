@@ -19,10 +19,19 @@ function App() {
     //test
     setSearch(input);
   };
-  const serchData = data.filter(
-    (user) =>
-      user.name.toLowerCase().includes(search.toLowerCase()) ||
-      user.id.toString().includes(search)
+  // const serchData = data.filter(
+  //   (user) =>
+  //     user.name.toLowerCase().includes(search.toLowerCase()) ||
+  //     user.id.toString().includes(search) ||
+  //     user.username.toLowerCase().includes(search.toLowerCase()) ||
+  //     user.email.toLowerCase().includes(search.toLowerCase()) ||
+  //     user.phone.toLowerCase().includes(search.toLowerCase())
+  // );
+
+  const serchData = data.filter(({ name, id, username, email, phone }) =>
+    `${name} ${id} ${username} ${email} ${phone}`
+      .toLowerCase()
+      .includes(search.toLowerCase())
   );
   return (
     <>
